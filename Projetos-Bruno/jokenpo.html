@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Jo Ken Po - JavaScript</title>
+    <link rel="stylesheet" href="css/estilo-jokenpo.css"/>
+</head>
+<body>
+
+	<table order rules=none colspan="0" align="center">
+		<tr> 
+			<td>
+				<h2 class="cabecalho"> Jogador </h2></td>
+				<td><h2 class="cabecalho"> Empate </h2></td>
+				<td><h2 class="cabecalho"> Máquina </h2></td>
+			</tr>
+			<tr>
+				<td><label  class="saidaText" id="Jogador">0</label></td>
+				<td><label  class="saidaText" id="Placar">0</label></td>
+				<td><label  class="saidaText" id="Maquina">0</label></td>
+			</tr> 
+			<tr>       
+				<td>
+					<input type="image" src="img/pedra.png" class="opcao" value='1'  onclick='Jogadas(this.value)'></td> 
+					<td><input type="image" src="img/papel.png" class="opcao" value='2' onclick='Jogadas(this.value)'></td> 
+					<td><input type="image" src="img/tesoura.png" class="opcao" value='3' onclick='Jogadas(this.value)'></td> 
+				</tr>
+
+
+				<script type="text/javascript" src="js/jokenpo.js"></script>
+
+			</body>
+			</html>
