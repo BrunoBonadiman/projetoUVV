@@ -1,0 +1,193 @@
+.login-page{
+	background-image: url(../imagens/hero.jpg);
+	background-repeat: no-repeat;
+	background-size:100%;
+	bottom: 0;
+	color: black;
+	left: 0;
+	overflow: auto;
+	padding: 3em;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	background-size: cover; 
+	filter: brightness(40%);
+}
+#usuario{
+	width: 150px;
+	height: 150px;
+	border-radius: 110px;	
+	color: white;
+}
+@media screen and (max-width: 1500px) {
+	.login-page{
+		background-image: url(../imagens/hero.jpg);
+		background-repeat: no-repeat;
+		background-size:100%;
+		bottom: 0;
+		color: black;
+		left: 0;
+		overflow: auto;
+		padding: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		background-size: cover; 
+		filter: brightness(40%);
+	}	
+	#usuario{
+		width: 150px;
+		height: 150px;
+		border-radius: 105px;		
+		color: white;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.login-page{
+		background-image: url(../imagens/hero.jpg);
+		background-repeat: no-repeat;
+		background-size:100%;
+		bottom: 0;
+		color: black;
+		left: 0;
+		overflow: auto;
+		padding: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		background-size: cover; 
+		filter: brightness(40%);
+	}	
+	#usuario{
+		width: 150px;
+		height: 150px;
+		border-radius: 105px;		
+		color: white;
+	}
+}
+@media screen and (max-width: 800px) {
+	.login-page{
+		background-image: url(../imagens/hero.jpg);
+		background-repeat: no-repeat;
+		background-size:100%;
+		bottom: 0;
+		color: black;
+		left: 0;
+		overflow: auto;
+		padding: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		background-size: cover; 
+		filter: brightness(40%);
+	}	
+	#usuario{
+		width: 150px;
+		height: 150px;
+		border-radius: 105px;		
+		color: white;
+	}
+}
+@media screen and (max-width: 600px) {
+	.login-page{
+		background-image: url(../imagens/hero.jpg);
+		background-repeat: no-repeat;
+		background-size:100%;
+		bottom: 0;
+		color: black;
+		left: 0;
+		overflow: auto;
+		padding: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		background-size: cover; 
+		filter: brightness(40%);
+	}	
+	#usuario{
+		width: 150px;
+		height: 150px;
+		border-radius: 105px;		
+		color: white;
+	}
+}
+@media screen and (max-width: 400px) {
+	.login-page{
+		background-image: url(../imagens/hero.jpg);
+		background-repeat: no-repeat;
+		background-size:100%;
+		bottom: 0;
+		color: black;
+		left: 0;
+		overflow: auto;
+		padding: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		background-size: cover; 
+		filter: brightness(40%);
+	}
+	#usuario{
+		width: 150px;
+		height: 150px;
+		border-radius: 105px;		
+		color: white;
+	}	
+}
+@media screen and (max-width: 320px) {
+	.login-page{
+		background-image: url(../imagens/hero.jpg);
+		background-repeat: no-repeat;
+		background-size:100%;
+		bottom: 0;
+		color: black;
+		left: 0;
+		overflow: auto;
+		padding: 3em;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		background-size: cover; 
+		filter: brightness(40%);
+	}	
+	#usuario{
+		width: 150px;
+		height: 150px;
+		border-radius: 105px;		
+		color: white;
+	}
+}
+
+.card{
+	background-color: rgba(0, 0, 0, 0.7);
+	margin-top: 50px;
+}
+#senha{
+	color: white;
+}
+#email{
+	color: white;
+}
+#texto{
+	color: white;
+}
+input{
+	color: white;
+}
+#cadastro{
+	font-size: 30px;
+	color: white;
+}
+#btn-cadastrar{
+	background-image: linear-gradient(to right top, #730000, #940005, #b70005, #da0004, #ff0000);
+}
+#btn-entrar{
+	background-image: linear-gradient(to right top, #730000, #940005, #b70005, #da0004, #ff0000);
+}
