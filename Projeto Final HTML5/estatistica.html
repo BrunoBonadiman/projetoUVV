@@ -58,94 +58,24 @@
 			<div class="col s12 m12">
 				<div class="card" id="card05">
 					<div class="card-content">
-						<h3 class="card-title left"><strong>Cadastrar Despesa</strong></h3>
+						<h3 class="card-title left"><strong>Estatísticas Mensais</strong></h3>
 						<div class="section"></div>					
 						<div class="row">
-							<form class="col s12">
-								<div class="row">
-									<div class="input-field col s6">							
-										<input id="descricao" type="text">
-										<label for="descricao">Descrição</label>
-									</div>									
-									<div class="input-field col s6">							
-										<input id="valor" type="text">
-										<label for="valor">Valor</label>
-									</div>														
-									<div class="input-field col s6">							
-										<input id="vencimento" type="text" class="datepicker">
-										<label for="vencimento">Data de Vencimento</label>
-									</div>													
-									<div class="input-field col s6">
-										<select id="parcelas">
-											<option value="" disabled selected></option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select>
-										<label>Parcelas</label>
-									</div>									
-									<div class="row">
-										<div class="input-field col s12">
-											<textarea id="observacao" class="materialize-textarea"></textarea>
-											<label>Observação</label>
-										</div>
-									</div>
-									<div align="center">
-										<button class="btn waves-effect waves-right" id="btn-cadastrar" type="submit" name="action">Cadastrar
-										</button>
-									</div>
-								</div>
-							</form>
+							<canvas id="myChart" width="600" height="600"></canvas>
 						</div>		
 					</div>				
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col s12 m6">
-				<div class="card" id="card05">
-					<div class="card-content">
-						<h3 class="card-title left"><strong>Salário do Mês</strong></h3>
-						<div class="section"></div>					
-						<div class="row">
-							<form class="col s12">
-								<div class="row">												
-									<div class="input-field col s6">							
-										<input id="salario-mes" type="text">
-										<label for="valor">Salário do Mês</label>
-									</div>								
-									<div align="center">
-										<button class="btn waves-effect waves-right" id="btn-cadastrar" type="submit" name="action">Salvar Salário
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>		
-					</div>				
-				</div>
-			</div>
-		</div>
-	</div>
+	</div>	
 
 	<div class="fixed-action-btn">
-		<a class="btn-floating btn-medium" id="menu-float">
+		<a class="btn-floating btn-medium red" id="menu-float">
 			<i class="material-icons">mode_edit</i>
 		</a>
 		<ul>
 			<li><a class="btn-floating red" href="index.html"><i class="material-icons">exit_to_app</i></a></li>
-			<li><a href="estatistica.html" class="btn-floating yellow darken-1"><i class="material-icons">show_chart</i></a></li>
+			<li><a class="btn-floating yellow darken-1" href="estatistica.html"><i class="material-icons">show_chart</i></a></li>
 			<li><a class="btn-floating green" href="atraso.html"><i class="material-icons">event</i></a></li>
 			<li><a class="btn-floating blue" href="cadastroDespesa.html"><i class="material-icons">add</i></a></li>
 		</ul>
@@ -158,11 +88,9 @@
 			</div>
 		</div>
 	</footer>
-	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="js/jquery-maskmoney.js"></script>
+	<script type="text/javascript" src="js/Chart.min.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function(){
 			$('.sidenav').sidenav();
@@ -171,35 +99,59 @@
 		$(document).ready(function(){
 			$('.tooltipped').tooltip();
 		});
-
-		$(document).ready(function(){
-			$('.datepicker').datepicker();
-		});
-
-		$(document).ready(function(){
-			$('select').formSelect();
-		});
-
-		$(document).ready(function()
-		{
-			$("#valor").maskMoney({
-				prefix: "R$ ",
-				decimal: ",",
-				thousands: "."
-			});
-		});
-
-		$(document).ready(function()
-		{
-			$("#salario-mes").maskMoney({
-				prefix: "R$ ",
-				decimal: ",",
-				thousands: "."
-			});
-		});
-
+		
 		$(document).ready(function(){
 			$('.fixed-action-btn').floatingActionButton();
+		});
+
+		var ctx = document.getElementById("myChart").getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+				datasets: [{
+					label: '2018',
+					data: [3500.00, 1000.00, 890.90, 500.00, 2000.00, 350.89, 765.00, 900.76, 460.98, 2345.87, 456.90, 450.00],
+					backgroundColor: [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(255, 159, 64, 0.2)',
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+					'rgba(255,99,132,1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(255,99,132,1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
 		});
 
 		$('.dropdown-trigger').dropdown();

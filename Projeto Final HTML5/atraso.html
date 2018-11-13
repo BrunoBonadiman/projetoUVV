@@ -53,89 +53,25 @@
 		<li><div class="divider"></div></li>
 		<li><a class="waves-effect" href="index.html"><i class="material-icons">exit_to_app</i>Sair</a></li>
 	</ul>
+	
 	<div class="container">
 		<div class="row">
-			<div class="col s12 m12">
-				<div class="card" id="card05">
-					<div class="card-content">
-						<h3 class="card-title left"><strong>Cadastrar Despesa</strong></h3>
-						<div class="section"></div>					
-						<div class="row">
-							<form class="col s12">
-								<div class="row">
-									<div class="input-field col s6">							
-										<input id="descricao" type="text">
-										<label for="descricao">Descrição</label>
-									</div>									
-									<div class="input-field col s6">							
-										<input id="valor" type="text">
-										<label for="valor">Valor</label>
-									</div>														
-									<div class="input-field col s6">							
-										<input id="vencimento" type="text" class="datepicker">
-										<label for="vencimento">Data de Vencimento</label>
-									</div>													
-									<div class="input-field col s6">
-										<select id="parcelas">
-											<option value="" disabled selected></option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select>
-										<label>Parcelas</label>
-									</div>									
-									<div class="row">
-										<div class="input-field col s12">
-											<textarea id="observacao" class="materialize-textarea"></textarea>
-											<label>Observação</label>
-										</div>
-									</div>
-									<div align="center">
-										<button class="btn waves-effect waves-right" id="btn-cadastrar" type="submit" name="action">Cadastrar
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>		
-					</div>				
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col s12 m6">
-				<div class="card" id="card05">
-					<div class="card-content">
-						<h3 class="card-title left"><strong>Salário do Mês</strong></h3>
-						<div class="section"></div>					
-						<div class="row">
-							<form class="col s12">
-								<div class="row">												
-									<div class="input-field col s6">							
-										<input id="salario-mes" type="text">
-										<label for="valor">Salário do Mês</label>
-									</div>								
-									<div align="center">
-										<button class="btn waves-effect waves-right" id="btn-cadastrar" type="submit" name="action">Salvar Salário
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>		
-					</div>				
-				</div>
-			</div>
+			<div class="col s12 m12">		
+				<h5 class="center"><strong>Despesas em Atraso</strong></h5>
+				<div class="divider"></div>					
+				<table class="bordered striped centered highlight responsive-table" id="tabela-despesas">
+					<thead>
+						<tr>
+							<th data-field="descricao">Descrição</th>
+							<th data-field="valor">Valor</th>
+							<th data-field="vencimento">Vencimento</th>
+							<th data-field="parcelas">Parcelas</th>
+							<th data-field="observacao">Oberservação</th>
+							<th data-field="opcoes">Opções</th>
+						</tr>
+					</thead>
+				</table>			
+			</div>				
 		</div>
 	</div>
 
@@ -145,57 +81,33 @@
 		</a>
 		<ul>
 			<li><a class="btn-floating red" href="index.html"><i class="material-icons">exit_to_app</i></a></li>
-			<li><a href="estatistica.html" class="btn-floating yellow darken-1"><i class="material-icons">show_chart</i></a></li>
+			<li><a class="btn-floating yellow darken-1" href="estatistica.html"><i class="material-icons">show_chart</i></a></li>
 			<li><a class="btn-floating green" href="atraso.html"><i class="material-icons">event</i></a></li>
 			<li><a class="btn-floating blue" href="cadastroDespesa.html"><i class="material-icons">add</i></a></li>
 		</ul>
 	</div>
 
-	<footer class="page-footer black">		
+	<footer class="page-footer black" style="height: 100px; margin-top: 10.5%;">		
 		<div class="footer-copyright">
 			<div class="container">
 				© 2018 Bruno Bonadiman Ferreira/ Antônio Cabral				
 			</div>
 		</div>
 	</footer>
-	
+
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="js/jquery-maskmoney.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function(){
 			$('.sidenav').sidenav();
 		});
 
+		$(document).ready( function () {
+			$('#tabela-despesas').DataTable();
+		} );
+
 		$(document).ready(function(){
 			$('.tooltipped').tooltip();
-		});
-
-		$(document).ready(function(){
-			$('.datepicker').datepicker();
-		});
-
-		$(document).ready(function(){
-			$('select').formSelect();
-		});
-
-		$(document).ready(function()
-		{
-			$("#valor").maskMoney({
-				prefix: "R$ ",
-				decimal: ",",
-				thousands: "."
-			});
-		});
-
-		$(document).ready(function()
-		{
-			$("#salario-mes").maskMoney({
-				prefix: "R$ ",
-				decimal: ",",
-				thousands: "."
-			});
 		});
 
 		$(document).ready(function(){
@@ -203,6 +115,7 @@
 		});
 
 		$('.dropdown-trigger').dropdown();
+
 	</script>
 </body>
 </html>

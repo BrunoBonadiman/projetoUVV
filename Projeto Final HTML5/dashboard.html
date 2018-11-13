@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Controle Financeiro</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper black">
+			<a href="dashboard.html" class="brand-logo"><img id="logo" src="imagens/logo.png"></a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="cadastroDespesa.html" class="btn-floating btn-medium waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Cadastrar Despesa" id="cadastrar-despesa"><i class="material-icons">add</i></a></li>
+				<li><a href="atraso.html" class="btn-floating btn-medium waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Despesas em Atraso" id="despesas-atraso"><i class="material-icons">event</i></a></li>
+				<li><a href="estatistica.html" class="btn-floating btn-medium waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Estatísticas" id="estatisticas"><i class="material-icons">show_chart</i></a></li>
+				<li><a href="#" class="btn-floating btn-medium waves-effect waves-light tooltipped dropdown-trigger" data-position="bottom" data-tooltip="Notificações" id="notificacoes" data-target='dropdown2'><i class="material-icons">notifications</i><span class="new badge">1</span></a></li>
+				<li><a href="index.html" class="btn-floating btn-medium waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Sair" id="exit"><i class="material-icons">exit_to_app</i></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Dropdown Structure -->
+	<ul id='dropdown1' class='dropdown-content'>
+		<li><a href="#">Há uma despesa que está atrasada!</a></li>		
+	</ul>
+
+	<!-- Dropdown Structure -->
+	<ul id='dropdown2' class='dropdown-content'>
+		<li><a href="#">Há uma despesa que está atrasada!</a></li>		
+	</ul>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><div class="user-view">
+			<div class="background">
+				<img class="responsive-img" src="imagens/23.png">
+			</div>
+			<a href="#user"><img class="circle" src="imagens/icone-avatar.jpg"></a>
+			<a href="#name"><span class="white-text name">Fulano Fulano</span></a>
+			<a href="#email"><span class="white-text email">fulano@fulano.com</span></a>
+		</div></li>
+		<li><a class="waves-effect" href="cadastroDespesa.html"><i class="material-icons">add</i>Cadastrar Despesa</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="waves-effect" href="atraso.html"><i class="material-icons">event</i>Despesas em Atraso</a></li>
+		<li><div  class="divider"></div></li>
+		<li><a class="waves-effect" href="estatistica.html"><i class="material-icons">show_chart</i>Estatísticas Mensais</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="waves-effect dropdown-trigger" data-target='dropdown1' href="#"><i class="material-icons">notifications</i><span class="new badge">1</span>Notificações</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="waves-effect" href="index.html"><i class="material-icons">exit_to_app</i>Sair</a></li>
+	</ul>
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col s12 m6 l3">
+				<div class="card" id="card01">
+					<div class="card-content white-text">
+						<a id="btn-01" class="btn-floating btn-medium waves-effect waves-light left red"><i class="material-icons">money_off</i></a>
+						<h6 id="T01" align="center"><strong>Total do Mês</strong></h6>
+						<p><h4 id="valor01"><strong>R$ 0,00</strong></h4></p>
+					</div>					
+				</div>
+			</div>
+			<div class="col s12 m6 l3">
+				<div class="card" id="card02">
+					<div class="card-content white-text">
+						<a id="btn-02" class="btn-floating btn-medium waves-effect waves-light left red"><i class="material-icons">monetization_on</i></a>
+						<h6 id="T02" align="center"><strong>Salário do Mês</strong></h6>
+						<p><h4 id="valor02"><strong>R$ 0,00</strong></h4></p>
+					</div>					
+				</div>
+			</div>
+			<div class="col s12 m6 l3">
+				<div class="card" id="card03">
+					<div class="card-content white-text">
+						<a id="btn-03" class="btn-floating btn-medium waves-effect waves-light left red"><i class="material-icons">attach_money</i></a>
+						<h6 id="T03" align="center"><strong>Sobra do Mês</strong></h6>
+						<p><h4 id="valor03"><strong>R$ 0,00</strong></h4></p>
+					</div>					
+				</div>
+			</div>
+			<div class="col s12 m6 l3"/>
+			<div class="card" id="card04">
+				<div class="card-content white-text">
+					<a id="btn-04" class="btn-floating btn-medium waves-effect waves-light left red"><i class="material-icons">swap_vert</i></a>
+					<h6 id="T04" align="center"><strong>Qtd. no Mês</strong></h6>
+					<p><h4 id="valor04"><strong>0</strong></h4></p>
+				</div>					
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m12">		
+			<h5 class="center"><strong>Despesas do Mês</strong></h5>
+			<div class="divider"></div>					
+			<table class="bordered striped centered highlight responsive-table" id="tabela-despesas">
+				<thead>
+					<tr>
+						<th data-field="descricao">Descrição</th>
+						<th data-field="valor">Valor</th>
+						<th data-field="vencimento">Vencimento</th>
+						<th data-field="parcelas">Parcelas</th>
+						<th data-field="observacao">Oberservação</th>
+						<th data-field="opcoes">Opções</th>
+					</tr>
+				</thead>
+			</table>			
+		</div>				
+	</div>
+</div>
+
+<div class="fixed-action-btn">
+	<a class="btn-floating btn-medium" id="menu-float">
+		<i class="material-icons">mode_edit</i>
+	</a>
+	<ul>
+		<li><a class="btn-floating red" href="index.html"><i class="material-icons">exit_to_app</i></a></li>
+		<li><a class="btn-floating yellow darken-1" href="estatistica.html"><i class="material-icons">show_chart</i></a></li>
+		<li><a class="btn-floating green" href="atraso.html"><i class="material-icons">event</i></a></li>
+		<li><a class="btn-floating blue" href="cadastroDespesa.html"><i class="material-icons">add</i></a></li>
+	</ul>
+</div>
+
+<footer class="page-footer black">	
+	<div class="footer-copyright">
+		<div class="container">
+			© 2018 Bruno Bonadiman Ferreira/ Antônio Cabral			
+		</div>
+	</div>
+</footer>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript">		
+	$(document).ready(function(){
+		$('.sidenav').sidenav();
+	});
+
+	$(document).ready( function () {
+		$('#tabela-despesas').DataTable();
+	} );
+	
+	$(document).ready(function(){
+		$('.tooltipped').tooltip();
+	});
+
+	$(document).ready(function(){
+		$('.fixed-action-btn').floatingActionButton();
+	});
+
+	$('.dropdown-trigger').dropdown();
+
+</script>
+</body>
+</html>

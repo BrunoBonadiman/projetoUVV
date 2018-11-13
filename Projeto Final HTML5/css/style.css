@@ -1,7 +1,6 @@
 .login-page{
 	background-image: url(../imagens/hero.jpg);
 	background-repeat: no-repeat;
-	background-size:100%;
 	bottom: 0;
 	color: black;
 	left: 0;
@@ -23,8 +22,7 @@
 @media screen and (max-width: 1500px) {
 	.login-page{
 		background-image: url(../imagens/hero.jpg);
-		background-repeat: no-repeat;
-		background-size:100%;
+		background-repeat: no-repeat;		
 		bottom: 0;
 		color: black;
 		left: 0;
@@ -47,8 +45,7 @@
 @media screen and (max-width: 1000px) {
 	.login-page{
 		background-image: url(../imagens/hero.jpg);
-		background-repeat: no-repeat;
-		background-size:100%;
+		background-repeat: no-repeat;		
 		bottom: 0;
 		color: black;
 		left: 0;
@@ -71,8 +68,7 @@
 @media screen and (max-width: 800px) {
 	.login-page{
 		background-image: url(../imagens/hero.jpg);
-		background-repeat: no-repeat;
-		background-size:100%;
+		background-repeat: no-repeat;		
 		bottom: 0;
 		color: black;
 		left: 0;
@@ -95,8 +91,7 @@
 @media screen and (max-width: 600px) {
 	.login-page{
 		background-image: url(../imagens/hero.jpg);
-		background-repeat: no-repeat;
-		background-size:100%;
+		background-repeat: no-repeat;		
 		bottom: 0;
 		color: black;
 		left: 0;
@@ -120,7 +115,6 @@
 	.login-page{
 		background-image: url(../imagens/hero.jpg);
 		background-repeat: no-repeat;
-		background-size:100%;
 		bottom: 0;
 		color: black;
 		left: 0;
@@ -144,7 +138,6 @@
 	.login-page{
 		background-image: url(../imagens/hero.jpg);
 		background-repeat: no-repeat;
-		background-size:100%;
 		bottom: 0;
 		color: black;
 		left: 0;
@@ -168,6 +161,7 @@
 .card{
 	background-color: rgba(0, 0, 0, 0.7);
 	margin-top: 40px;
+	
 }
 #senha{
 	color: white;
@@ -185,7 +179,7 @@ input{
 	font-size: 30px;
 	color: white;
 }
-#btn-cadastrar{
+#btn-cadastrarUsuario{
 	background-image: linear-gradient(to right top, #730000, #940005, #b70005, #da0004, #ff0000);
 }
 #btn-entrar{
@@ -210,24 +204,24 @@ input{
 	margin-top: 5px;
 }
 #card01{
-	background-image: linear-gradient(to right bottom, #dcdbdb, #e5e4e4, #ededed, #f6f6f6, #ffffff);
-	border-radius: 5px;
+	background-image: linear-gradient(to right bottom, #eeeeee, #f2f2f2, #f6f6f6, #fbfbfb, #ffffff);
+	border-radius: 10px;
 }
 #card02{
-	background-image: linear-gradient(to right bottom, #dcdbdb, #e5e4e4, #ededed, #f6f6f6, #ffffff);
-	border-radius: 5px;
+	background-image: linear-gradient(to right bottom, #eeeeee, #f2f2f2, #f6f6f6, #fbfbfb, #ffffff);
+	border-radius: 10px;
 }
 #card03{
-	background-image: linear-gradient(to right bottom, #dcdbdb, #e5e4e4, #ededed, #f6f6f6, #ffffff);
-	border-radius: 5px;
+	background-image: linear-gradient(to right bottom, #eeeeee, #f2f2f2, #f6f6f6, #fbfbfb, #ffffff);
+	border-radius: 10px;
 }
 #card04{
-	background-image: linear-gradient(to right bottom, #dcdbdb, #e5e4e4, #ededed, #f6f6f6, #ffffff);
-	border-radius: 5px;
+	background-image: linear-gradient(to right bottom, #eeeeee, #f2f2f2, #f6f6f6, #fbfbfb, #ffffff);
+	border-radius: 10px;
 }
 #card05{
-	background-image: linear-gradient(to right bottom, #dcdbdb, #e5e4e4, #ededed, #f6f6f6, #ffffff);
-	border-radius: 5px;
+	background-image: linear-gradient(to right bottom, #eeeeee, #f2f2f2, #f6f6f6, #fbfbfb, #ffffff);
+	border-radius: 10px;
 }
 
 #T01{
@@ -279,9 +273,48 @@ input{
 #vencimento{
 	color:black;
 }
-#parcelas{
+#salario-mes{
 	color: black;
 }
 #observacao{
 	color: black;
+}
+#cadastrar-despesa{
+	background-image: linear-gradient(to right bottom, #488b45, #499842, #4aa53e, #4cb338, #4ec02f);
+}
+#despesas-atraso{
+	background-image: linear-gradient(to right bottom, #488b45, #499842, #4aa53e, #4cb338, #4ec02f);
+}
+#estatisticas{
+	background-image: linear-gradient(to right bottom, #488b45, #499842, #4aa53e, #4cb338, #4ec02f);
+}
+#exit{
+	background-image: linear-gradient(to right bottom, #488b45, #499842, #4aa53e, #4cb338, #4ec02f);
+}
+#notificacoes{
+	background-image: linear-gradient(to right bottom, #488b45, #499842, #4aa53e, #4cb338, #4ec02f);
+}
+#menu-float{
+	background-image: linear-gradient(to right bottom, #488b45, #499842, #4aa53e, #4cb338, #4ec02f);
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+}
+
+*{
+	background-attachment: fixed;	
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+footer{
+	height: 100px;
+	margin-top:10.5%;
+	flex: auto;
 }
